@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic page settings -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameStore - Products</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Navigation bar with links to all pages -->
+    <div class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Main products content -->
+    <div class="content">
+        <h1>Our Games</h1>
+        <p>Browse our collection of PC, PS4 and PS5 games.</p>
+
+        <!-- Filter buttons to filter games by platform -->
+        <div class="filter-buttons">
+            <button onclick="filterProducts('All')">All</button>
+            <button onclick="filterProducts('PC')">PC</button>
+            <button onclick="filterProducts('PS4')">PS4</button>
+            <button onclick="filterProducts('PS5')">PS5</button>
+        </div>
+
+        <!-- Products will be loaded here dynamically from the database -->
+        <div id="products-container"></div>
+    </div>
+
+    <!-- Footer present on all pages -->
+    <div class="footer">
+        <p>&copy; 2025 GameStore | Matheus Sodre | CCT College Dublin</p>
+        <p>
+            <a href="index.html">Home</a> |
+            <a href="products.html">Products</a> |
+            <a href="cart.html">Cart</a> |
+            <a href="contact.html">Contact</a>
+        </p>
+    </div>
+
+    <!-- JavaScript file that fetches products from the server -->
+    <script src="js/products.js"></script>
+
+</body>
+</html>

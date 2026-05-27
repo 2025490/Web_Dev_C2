@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic page settings -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameStore - Cart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Navigation bar with links to all pages -->
+    <div class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="cart.html">Cart</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Main cart content -->
+    <div class="content">
+        <h1>Your Cart</h1>
+        <p>Review the games you have selected before proceeding to checkout.</p>
+
+        <!-- Cart items will be loaded here dynamically -->
+        <div id="cart-container"></div>
+
+        <!-- Total price display -->
+        <div class="cart-total">
+            <h2>Total: <span id="cart-total">€0.00</span></h2>
+        </div>
+
+        <!-- Checkout button -->
+        <a href="checkout.html" id="checkout-btn">Proceed to Checkout</a>
+    </div>
+
+    <!-- Footer present on all pages -->
+    <div class="footer">
+        <p>&copy; 2025 GameStore | Matheus Sodre | CCT College Dublin</p>
+        <p>
+            <a href="index.html">Home</a> |
+            <a href="products.html">Products</a> |
+            <a href="cart.html">Cart</a> |
+            <a href="contact.html">Contact</a>
+        </p>
+    </div>
+
+    <!-- JavaScript file that fetches and manages cart items -->
+    <script src="js/cart.js"></script>
+
+</body>
+</html>
