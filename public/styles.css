@@ -1,0 +1,429 @@
+/* Basic style for the whole page */
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #0f0f1a;
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+}
+
+/* Navigation bar */
+.navbar {
+    background-color: #1a1a2e;
+    text-align: center;
+    padding: 15px 0;
+    border-bottom: 2px solid #6c63ff;
+}
+
+.navbar ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.navbar ul li {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+.navbar ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.navbar ul li a:hover {
+    color: #6c63ff;
+}
+
+/* Main content area used in most pages */
+.content {
+    width: 85%;
+    max-width: 1100px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+/* Main title style */
+.content h1 {
+    font-size: 38px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+/* Second title style */
+.content h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #6c63ff;
+}
+
+/* Paragraph style */
+.content p {
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    color: #cccccc;
+}
+
+/* Main button style */
+.content a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 24px;
+    background-color: #6c63ff;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.content a:hover {
+    background-color: #574fd6;
+}
+
+/* Hero banner on homepage */
+.hero-banner {
+    background: linear-gradient(135deg, #1a1a2e, #6c63ff);
+    height: 300px;
+    border-radius: 12px;
+    margin: 30px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0 4px 12px rgba(108, 99, 255, 0.4);
+}
+
+/* Info box used on homepage */
+.info-box {
+    background-color: #1a1a2e;
+    width: 75%;
+    margin: 40px auto;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(108, 99, 255, 0.2);
+    text-align: center;
+    border: 1px solid #6c63ff;
+}
+
+.info-box h2 {
+    color: #6c63ff;
+    margin-bottom: 15px;
+}
+
+.info-box h3 {
+    color: #ffffff;
+    margin-top: 15px;
+}
+
+.info-box p {
+    font-size: 17px;
+    line-height: 1.6;
+    color: #cccccc;
+    margin-bottom: 15px;
+}
+
+.info-box a {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px 24px;
+    background-color: #6c63ff;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+}
+
+.info-box a:hover {
+    background-color: #574fd6;
+}
+
+/* Products grid layout */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* Individual product card */
+.product-card {
+    background-color: #1a1a2e;
+    border-radius: 14px;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #6c63ff;
+    box-shadow: 0 4px 12px rgba(108, 99, 255, 0.2);
+    transition: transform 0.2s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    color: #ffffff;
+    margin-bottom: 8px;
+    font-size: 18px;
+}
+
+.product-card .platform {
+    display: inline-block;
+    background-color: #6c63ff;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.product-card .price {
+    font-size: 22px;
+    font-weight: bold;
+    color: #6c63ff;
+    margin-bottom: 15px;
+}
+
+.product-card button {
+    background-color: #6c63ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    width: 100%;
+}
+
+.product-card button:hover {
+    background-color: #574fd6;
+}
+
+/* Filter buttons on products page */
+.filter-buttons {
+    margin: 20px 0;
+}
+
+.filter-buttons button {
+    background-color: #1a1a2e;
+    color: #ffffff;
+    border: 1px solid #6c63ff;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 0 5px;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.filter-buttons button:hover {
+    background-color: #6c63ff;
+}
+
+/* Cart items */
+.cart-item {
+    background-color: #1a1a2e;
+    border-radius: 14px;
+    padding: 20px;
+    margin: 15px auto;
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #6c63ff;
+    box-shadow: 0 4px 12px rgba(108, 99, 255, 0.2);
+}
+
+.cart-item h3 {
+    color: #ffffff;
+    margin: 0;
+}
+
+.cart-item .price {
+    color: #6c63ff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.cart-item button {
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.cart-item button:hover {
+    background-color: #cc0000;
+}
+
+/* Cart total */
+.cart-total {
+    margin: 20px auto;
+    width: 75%;
+    text-align: right;
+}
+
+.cart-total h2 {
+    color: #ffffff;
+}
+
+.cart-total span {
+    color: #6c63ff;
+}
+
+/* Contact and checkout form */
+.contact-form {
+    width: 40%;
+    min-width: 300px;
+    margin: 50px auto;
+    padding: 25px;
+    background-color: #1a1a2e;
+    box-shadow: 0 4px 12px rgba(108, 99, 255, 0.2);
+    text-align: left;
+    border-radius: 14px;
+    border: 1px solid #6c63ff;
+}
+
+.contact-form h2 {
+    text-align: center;
+    color: #6c63ff;
+    margin-bottom: 20px;
+}
+
+/* Labels with proper binding to inputs */
+.contact-form label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* Input and textarea styling */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 5px;
+    font-size: 16px;
+    border: 1px solid #6c63ff;
+    border-radius: 8px;
+    box-sizing: border-box;
+    background-color: #0f0f1a;
+    color: #ffffff;
+}
+
+.contact-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Submit and order buttons */
+.contact-form button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background-color: #6c63ff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+.contact-form button:hover {
+    background-color: #574fd6;
+}
+
+/* Inline error messages displayed next to fields */
+/* This replaces the alert() pop-ups from CA1 */
+.error-message {
+    display: block;
+    color: #ff4444;
+    font-size: 13px;
+    margin-bottom: 10px;
+    min-height: 18px;
+}
+
+/* Success message shown after form submission */
+.success-message {
+    text-align: center;
+    color: #44ff88;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+/* Footer present on all pages */
+.footer {
+    background-color: #1a1a2e;
+    text-align: center;
+    padding: 20px;
+    margin-top: 60px;
+    border-top: 2px solid #6c63ff;
+    color: #cccccc;
+}
+
+.footer a {
+    color: #6c63ff;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive design for mobile viewports */
+/* Fixes the overlap issues from CA1 feedback */
+@media (max-width: 768px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .cart-item {
+        flex-direction: column;
+        width: 90%;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .contact-form {
+        width: 90%;
+    }
+
+    .info-box {
+        width: 90%;
+    }
+
+    .navbar ul li {
+        margin: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .products-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .content h1 {
+        font-size: 28px;
+    }
+}
