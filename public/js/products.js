@@ -1,9 +1,7 @@
 // Store all products fetched from the database
-// This variable is used by the filter function to avoid re-fetching
 let allProducts = [];
 
 // Fetch all products from the server when the page loads
-// The server queries the MySQL database and returns the results as JSON
 fetch("/api/products")
     .then(function(response) {
         return response.json();
@@ -14,33 +12,25 @@ fetch("/api/products")
     });
 
 // Display products in the products grid
-// This function dynamically creates HTML cards for each product
 function displayProducts(products) {
     const container = document.getElementById("products-container");
 
-    // If no products found, show a message
     if (products.length === 0) {
         container.innerHTML = "<p>No games found for this platform.</p>";
         return;
     }
 
-    // Create the grid container
     let html = "<div class='products-grid'>";
 
-    // Loop through each product and create a card
     products.forEach(function(product) {
         html += `
             <div class="product-card" data-platform="${product.platform}">
-                <img src="images/${product.image}" 
-                     alt="${product.name}"
-                     onerror="this.src='images/default.jpg'">
+                <img src="images/${product.image}" alt="${product.name}" onerror="this.src='images/default.jpg'">
                 <h3>${product.name}</h3>
                 <span class="platform">${product.platform}</span>
                 <p>${product.description}</p>
                 <div class="price">€${parseFloat(product.price).toFixed(2)}</div>
-                <button onclick="addToCart(${product.id}, '${product.name}', ${product.price})">
-                    Add to Cart
-                </button>
+                <button onclick="addToCart(${product.id}, this)">Add to Cart</button>
             </div>
         `;
     });
@@ -49,8 +39,7 @@ function displayProducts(products) {
     container.innerHTML = html;
 }
 
-// Filter products by platform without re-fetching from the database
-// Uses the allProducts array stored in memory
+// Filter products by platform
 function filterProducts(platform) {
     if (platform === "All") {
         displayProducts(allProducts);
@@ -62,29 +51,52 @@ function filterProducts(platform) {
     }
 }
 
-// Send a POST request to the server to add a product to the cart
-// The server then inserts the item into the cart table in MySQL
-function addToCart(productId, name, price) {
+// Add product to cart
+function addToCart(productId, btn) {
+    console.log("Add to cart clicked!", productId);
+
+    // Find the product in allProducts array
+    const product = allProducts.find(function(p) {
+        return p.id === productId;
+    });
+
+    if (!product) {
+        console.log("Product not found!");
+        return;
+    }
+
     fetch("/api/cart", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ product_id: productId, name: name, price: price })
+        body: JSON.stringify({ 
+            product_id: product.id, 
+            name: product.name, 
+            price: product.price 
+        })
     })
     .then(function(response) {
         return response.json();
     })
     .then(function(data) {
-        // Show confirmation message to the user without using alert()
-        const container = document.getElementById("products-container");
-        const message = document.createElement("p");
-        message.style.color = "#44ff88";
-        message.style.fontWeight = "bold";
-        message.textContent = `${name} added to cart!`;
-        container.insertBefore(message, container.firstChild);
+        console.log("Cart response:", data);
 
-        // Remove the message after 2 seconds
+        const notification = document.createElement("div");
+        notification.classList.add("notification");
+        notification.textContent = "✅ " + product.name + " added to cart!";
+        document.body.appendChild(notification);
+
         setTimeout(function() {
-            message.remove();
+            notification.classList.add("show");
+        }, 100);
+
+        setTimeout(function() {
+            notification.classList.remove("show");
+            setTimeout(function() {
+                notification.remove();
+            }, 300);
         }, 2000);
+    })
+    .catch(function(err) {
+        console.log("Error:", err);
     });
 }

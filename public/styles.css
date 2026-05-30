@@ -83,19 +83,39 @@ body {
     background-color: #574fd6;
 }
 
-/* Hero banner on homepage */
+/* Hero banner on homepage with gaming image */
 .hero-banner {
-    background: linear-gradient(135deg, #1a1a2e, #6c63ff);
-    height: 300px;
+    background-image: url("images/banner.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 350px;
     border-radius: 12px;
     margin: 30px 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 32px;
-    font-weight: bold;
-    color: white;
     box-shadow: 0 4px 12px rgba(108, 99, 255, 0.4);
+    position: relative;
+}
+
+/* Dark overlay so the text is readable over the image */
+.hero-overlay {
+    background-color: rgba(0, 0, 0, 0.55);
+    padding: 30px 50px;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.hero-overlay h2 {
+    font-size: 36px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.hero-overlay p {
+    font-size: 22px;
+    color: #cccccc;
+    letter-spacing: 5px;
 }
 
 /* Info box used on homepage */
@@ -389,6 +409,27 @@ body {
 
 .footer a:hover {
     text-decoration: underline;
+}
+
+/* Notification popup when item is added to cart */
+.notification {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #6c63ff;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(108, 99, 255, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 999;
+}
+
+.notification.show {
+    opacity: 1;
 }
 
 /* Responsive design for mobile viewports */
